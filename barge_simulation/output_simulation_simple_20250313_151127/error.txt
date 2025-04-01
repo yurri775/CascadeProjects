@@ -1,0 +1,17 @@
+=== Erreur du scénario simulation_simple ===
+Code de sortie: 1
+
+=== STDOUT ===
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 169, in <module>
+    main()
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 114, in main
+    simulator.add_barge(barge)
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\simulation\simulator.py", line 53, in add_barge
+    self._schedule_departure(barge, next_node, self.current_time)
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\simulation\simulator.py", line 412, in _schedule_departure
+    Event.BARGE_DEPARTURE, 
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Event' has no attribute 'BARGE_DEPARTURE'

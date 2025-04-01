@@ -1,0 +1,5 @@
+demand_id	service_id	start_time	end_time	completion_status
+D1	S1	0	12	completed
+D2	S2	0	12	completed
+D3	S1	4	8	completed
+D4	S2	4	8	completed

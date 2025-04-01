@@ -1,0 +1,4 @@
+service_id,origin,destination,capacity,frequency,duration
+S1,A,C,136,1,3
+S2,A,B,186,3,2
+S3,B,A,99,2,1

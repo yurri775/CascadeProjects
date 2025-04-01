@@ -1,0 +1,12 @@
+=== Erreur du scénario simulation_reelle ===
+Code de sortie: 1
+
+=== STDOUT ===
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\run_simulation.py", line 11, in <module>
+    from src.simulation.barge_simulator import BargeSimulator
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\simulation\barge_simulator.py", line 4, in <module>
+    import simpy
+ModuleNotFoundError: No module named 'simpy'

@@ -1,0 +1,29 @@
+=== Rapport de performance de la simulation ===
+
+== Statistiques globales ==
+Temps total de simulation: 100.00
+Nombre total d'événements: 16
+
+== Statistiques des demandes ==
+Total des demandes: 4
+Demandes complétées: 0
+Demandes échouées: 0
+Demandes en attente: 4
+Demandes en cours: 0
+Temps moyen de completion: 0.00
+Temps moyen d'attente: 0.00
+Taux de livraison à temps: 0.0%
+
+== Statistiques des barges ==
+
+Barge B0:
+  Nombre de trajets: 3
+  Temps total de trajet: 3.00
+  Taux d'utilisation: 3.0%
+  Charge moyenne: 0.0%
+
+Barge B1:
+  Nombre de trajets: 3
+  Temps total de trajet: 3.00
+  Taux d'utilisation: 3.0%
+  Charge moyenne: 0.0%

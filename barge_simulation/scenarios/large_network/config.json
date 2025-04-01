@@ -1,0 +1,17 @@
+{
+    "simulation_name": "Large Network Simulation",
+    "duration": 200,
+    "random_seed": 456,
+    "logging_level": "INFO",
+    "output_directory": "output",
+    "visualization": true,
+    "analysis": true,
+    "parameters": {
+        "loading_time_per_unit": 0.1,
+        "unloading_time_per_unit": 0.1,
+        "terminal_capacity": 500,
+        "barge_speed_factor": 1.0,
+        "demand_priority_weight": 1.0,
+        "urgency_factor": 1.5
+    }
+}

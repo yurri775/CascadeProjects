@@ -1,0 +1,5 @@
+demand_id	path	service_id	start_time	end_time
+D1	A-B-C-D	S1	0	12
+D2	D-C-B-A	S2	0	12
+D3	B-C	S1	4	8
+D4	C-B	S2	4	8

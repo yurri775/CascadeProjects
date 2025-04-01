@@ -1,0 +1,7 @@
+id_service,periode,id_leg,capacite,cap_resid,id_demande,volume
+S1,1,L1,100,80,D1,20
+S1,1,L2,100,70,D2,30
+S1,2,L1,100,90,D3,10
+S1,2,L2,100,85,D4,15
+S2,1,L3,150,120,D5,30
+S2,2,L3,150,100,D6,50

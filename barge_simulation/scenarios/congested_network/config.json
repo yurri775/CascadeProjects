@@ -1,0 +1,17 @@
+{
+    "simulation_name": "Congested Network Simulation",
+    "duration": 120,
+    "random_seed": 789,
+    "logging_level": "INFO",
+    "output_directory": "output",
+    "visualization": true,
+    "analysis": true,
+    "parameters": {
+        "loading_time_per_unit": 0.2,
+        "unloading_time_per_unit": 0.2,
+        "terminal_capacity": 300,
+        "barge_speed_factor": 1.0,
+        "demand_priority_weight": 1.0,
+        "urgency_factor": 1.5
+    }
+}

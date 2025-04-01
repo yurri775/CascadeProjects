@@ -1,0 +1,5 @@
+demand_id	orig	dest	vol	t_resa	t_due	urgente	anticipe	cat
+D1	0	3	50	0	20	1	0	F
+D2	3	0	75	0	20	0	1	R
+D3	1	2	30	5	25	1	0	P
+D4	2	1	45	5	25	0	1	F

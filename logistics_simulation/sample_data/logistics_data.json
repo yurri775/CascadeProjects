@@ -1,0 +1,125 @@
+{
+  "simulation_data": [
+    {
+      "id_service": "S1",
+      "periode": 1,
+      "id_leg": "L1",
+      "capacite": 100,
+      "cap_resid": 80,
+      "id_demande": "D1",
+      "volume": 20
+    },
+    {
+      "id_service": "S1",
+      "periode": 1,
+      "id_leg": "L2",
+      "capacite": 100,
+      "cap_resid": 70,
+      "id_demande": "D2",
+      "volume": 30
+    },
+    {
+      "id_service": "S1",
+      "periode": 2,
+      "id_leg": "L1",
+      "capacite": 100,
+      "cap_resid": 90,
+      "id_demande": "D3",
+      "volume": 10
+    },
+    {
+      "id_service": "S1",
+      "periode": 2,
+      "id_leg": "L2",
+      "capacite": 100,
+      "cap_resid": 85,
+      "id_demande": "D4",
+      "volume": 15
+    },
+    {
+      "id_service": "S2",
+      "periode": 1,
+      "id_leg": "L3",
+      "capacite": 150,
+      "cap_resid": 120,
+      "id_demande": "D5",
+      "volume": 30
+    },
+    {
+      "id_service": "S2",
+      "periode": 2,
+      "id_leg": "L3",
+      "capacite": 150,
+      "cap_resid": 100,
+      "id_demande": "D6",
+      "volume": 50
+    }
+  ],
+  "reservation_data": [
+    {
+      "t_resa": 1,
+      "cat": "A",
+      "orig": "O1",
+      "dest": "D1",
+      "anticipe": true,
+      "urgente": false,
+      "t_avl": 5,
+      "t_due": 10,
+      "vol": 20,
+      "fare": 100,
+      "decision": "accepted"
+    },
+    {
+      "t_resa": 1,
+      "cat": "B",
+      "orig": "O1",
+      "dest": "D2",
+      "anticipe": false,
+      "urgente": true,
+      "t_avl": 2,
+      "t_due": 5,
+      "vol": 15,
+      "fare": 80,
+      "decision": "rejected"
+    },
+    {
+      "t_resa": 2,
+      "cat": "A",
+      "orig": "O2",
+      "dest": "D1",
+      "anticipe": true,
+      "urgente": false,
+      "t_avl": 7,
+      "t_due": 15,
+      "vol": 25,
+      "fare": 120,
+      "decision": "accepted"
+    },
+    {
+      "t_resa": 2,
+      "cat": "B",
+      "orig": "O2",
+      "dest": "D3",
+      "anticipe": false,
+      "urgente": false,
+      "t_avl": 10,
+      "t_due": 20,
+      "vol": 30,
+      "fare": 150,
+      "decision": "accepted"
+    },
+    {
+      "t_resa": 3,
+      "cat": "C",
+      "orig": "O3",
+      "dest": "D2",
+      "anticipe": true,
+      "urgente": true,
+      "t_avl": 1,
+      "t_due": 3,
+      "vol": 10,
+      "fare": 90,
+      "decision": "rejected"
+    }
+  ]
+}

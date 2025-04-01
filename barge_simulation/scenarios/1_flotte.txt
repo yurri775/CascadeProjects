@@ -1,0 +1,4 @@
+id_barge	id_service	capacite	loading_rate	unloading_rate
+1	1	100	10	10
+2	2	150	10	10
+3	NULL	80	10	10

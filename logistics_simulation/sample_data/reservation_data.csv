@@ -1,0 +1,6 @@
+t_resa,cat,orig,dest,anticipe,urgente,t_avl,t_due,vol,fare,decision
+1,A,O1,D1,True,False,5,10,20,100,accepted
+1,B,O1,D2,False,True,2,5,15,80,rejected
+2,A,O2,D1,True,False,7,15,25,120,accepted
+2,B,O2,D3,False,False,10,20,30,150,accepted
+3,C,O3,D2,True,True,1,3,10,90,rejected

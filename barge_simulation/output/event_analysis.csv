@@ -1,0 +1,17 @@
+id,time,type,resource_type,resource_id,quantity,origin,destination
+1,0,BARGE_DEPARTURE,unknown,B0,0,,
+2,0,BARGE_DEPARTURE,unknown,B1,0,,
+3,0,DEMAND_ARRIVAL,unknown,D0_F,50,,3
+4,0,DEMAND_ARRIVAL,unknown,D1_R,75,,0
+9,1,BARGE_ARRIVAL,unknown,B0,0,1,
+10,1,BARGE_ARRIVAL,unknown,B1,0,1,
+11,1,BARGE_DEPARTURE,unknown,B0,0,,
+12,1,BARGE_DEPARTURE,unknown,B1,0,,
+13,2,BARGE_ARRIVAL,unknown,B0,0,2,
+14,2,BARGE_ARRIVAL,unknown,B1,0,2,
+15,2,BARGE_DEPARTURE,unknown,B0,0,,
+16,2,BARGE_DEPARTURE,unknown,B1,0,,
+17,3,BARGE_ARRIVAL,unknown,B0,0,3,
+18,3,BARGE_ARRIVAL,unknown,B1,0,3,
+5,5,DEMAND_ARRIVAL,unknown,D2_P,30,,2
+6,5,DEMAND_ARRIVAL,unknown,D3_F,45,,1

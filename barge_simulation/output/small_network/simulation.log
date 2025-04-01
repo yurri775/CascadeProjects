@@ -1,0 +1,271 @@
+2025-03-03 16:27:21,935 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:27:21,937 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:27:21,937 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:27:21,937 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:28:29,755 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:28:29,756 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:28:29,759 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:28:29,760 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:28:29,763 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:28:29,764 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:28:44,187 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:28:44,188 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:28:44,188 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:28:44,188 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:28:44,193 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:28:44,193 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:33:16,549 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:33:16,549 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:33:16,549 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:33:16,550 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:33:16,554 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:33:16,554 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:33:16,556 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:33:16,556 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:38:28,265 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:38:28,266 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:38:28,266 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:38:28,266 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:38:28,272 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:38:28,272 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:38:28,275 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:38:28,275 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:38:28,278 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:38:28,278 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:38:39,448 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:38:39,449 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:38:39,449 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:38:39,449 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:38:39,457 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:38:39,458 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:38:39,461 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:38:39,461 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:38:39,463 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:38:39,463 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:40:34,462 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:40:34,462 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:40:34,462 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:40:34,462 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:40:34,466 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:40:34,467 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:40:34,469 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:40:34,469 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:40:34,472 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:40:34,472 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:40:34,474 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 16:40:34,475 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 16:40:34,475 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 16:40:34,476 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 16:40:34,476 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 16:40:34,476 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 16:40:34,477 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 16:42:24,044 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:42:24,045 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:42:24,045 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:42:24,046 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:42:24,051 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:42:24,052 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:42:24,054 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:42:24,055 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:42:24,057 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:42:24,058 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:42:24,059 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 16:42:24,060 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 16:42:24,060 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 16:42:24,060 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 16:42:24,061 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 16:42:24,061 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 16:42:24,062 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 16:43:48,790 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:43:48,790 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:43:48,791 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:43:48,791 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:43:48,795 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:43:48,795 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:43:48,798 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:43:48,799 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:43:48,801 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:43:48,801 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:43:48,803 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 16:43:48,804 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 16:43:48,804 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 16:43:48,804 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 16:43:48,805 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 16:43:48,805 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 16:43:48,806 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 16:44:15,450 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:44:15,450 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:44:15,451 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:44:15,451 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:44:15,455 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:44:15,455 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:44:15,457 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:44:15,458 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:44:15,460 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:44:15,460 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:44:15,463 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 16:44:15,463 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 16:44:15,463 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 16:44:15,463 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 16:44:15,465 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 16:44:15,465 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 16:44:15,465 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 16:46:04,430 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:46:04,430 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:46:04,431 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:46:04,432 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:46:04,435 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:46:04,436 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:46:04,438 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:46:04,438 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:46:04,440 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:46:04,441 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:46:04,442 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 16:46:04,443 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 16:46:04,444 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 16:46:04,444 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 16:46:04,444 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 16:46:04,445 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 16:46:04,445 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 16:46:41,706 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:46:41,706 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:46:41,706 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:46:41,709 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:46:41,716 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:46:41,716 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:46:41,721 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:46:41,723 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:46:41,728 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:46:41,728 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:46:41,729 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 16:46:41,729 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 16:46:41,729 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 16:46:41,729 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 16:46:41,734 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 16:46:41,736 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 16:46:41,736 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 16:47:29,613 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:47:29,613 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:47:29,613 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:47:29,613 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:47:29,619 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:47:29,620 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:47:29,622 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:47:29,622 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:47:29,627 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:47:29,627 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:47:29,630 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 16:47:29,632 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 16:47:29,632 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 16:47:29,632 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 16:47:29,634 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 16:47:29,634 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 16:47:29,635 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 16:48:29,674 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 16:48:29,677 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 16:48:29,677 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 16:48:29,677 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 16:48:29,681 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 16:48:29,681 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 16:48:29,687 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 16:48:29,687 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 16:48:29,689 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 16:48:29,689 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 16:48:29,694 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 16:48:29,695 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 16:48:29,696 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 16:48:29,696 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 16:48:29,696 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 16:48:29,698 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 16:48:29,698 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 17:42:51,193 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 17:42:51,194 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 17:42:51,195 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 17:42:51,195 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 17:42:51,197 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 17:42:51,197 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 17:42:51,203 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 17:42:51,203 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 17:42:51,204 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 17:42:51,204 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 17:42:51,208 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 17:42:51,208 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 17:42:51,208 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 17:42:51,211 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 17:42:51,211 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 17:42:51,211 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 17:42:51,211 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 17:43:54,087 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 17:43:54,091 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 17:43:54,091 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 17:43:54,091 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 17:43:54,092 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 17:43:54,092 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 17:43:54,092 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 17:43:54,099 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 17:43:54,101 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 17:43:54,101 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 17:43:54,107 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 17:43:54,107 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 17:43:54,107 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 17:43:54,107 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 17:43:54,109 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 17:43:54,109 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 17:43:54,109 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 17:43:54,124 - ScenarioSimulation - INFO - Simulation terminée!
+2025-03-03 17:43:54,125 - ScenarioSimulation - INFO - Analyse des résultats de la simulation...
+2025-03-03 17:43:54,125 - ScenarioSimulation - INFO - Analyse des événements...
+2025-03-03 17:43:54,132 - ScenarioSimulation - INFO - Analyse des événements sauvegardée: output\small_network\event_analysis.csv
+2025-03-03 17:43:54,698 - ScenarioSimulation - INFO - Distribution des événements sauvegardée: output\small_network\event_distribution.png
+2025-03-03 17:43:55,393 - ScenarioSimulation - INFO - Chronologie des événements sauvegardée: output\small_network\event_timeline.png
+2025-03-03 17:43:55,394 - ScenarioSimulation - INFO - Création des visualisations...
+2025-03-03 17:48:26,470 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 17:48:26,470 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 17:48:26,470 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 17:48:26,470 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 17:48:26,475 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 17:48:26,475 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 17:48:26,478 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 17:48:26,478 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 17:48:26,481 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 17:48:26,481 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 17:48:26,484 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 17:48:26,485 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 17:48:26,485 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 17:48:26,485 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 17:48:26,486 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 17:48:26,486 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 17:48:26,487 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 17:48:26,500 - ScenarioSimulation - INFO - Simulation terminée!
+2025-03-03 17:48:26,500 - ScenarioSimulation - INFO - Analyse des résultats de la simulation...
+2025-03-03 17:48:26,501 - ScenarioSimulation - INFO - Analyse des événements...
+2025-03-03 17:48:26,505 - ScenarioSimulation - INFO - Analyse des événements sauvegardée: output\small_network\event_analysis.csv
+2025-03-03 17:48:27,092 - ScenarioSimulation - INFO - Distribution des événements sauvegardée: output\small_network\event_distribution.png
+2025-03-03 17:48:27,797 - ScenarioSimulation - INFO - Chronologie des événements sauvegardée: output\small_network\event_timeline.png
+2025-03-03 17:48:27,797 - ScenarioSimulation - INFO - Création des visualisations...
+2025-03-03 17:48:27,938 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.PillowWriter'>
+2025-03-03 17:48:29,964 - ScenarioSimulation - INFO - Animation sauvegardée: output\small_network\barge_movement.gif
+2025-03-03 19:14:41,689 - ScenarioSimulation - INFO - Initialisation de la simulation pour le scénario: small_network
+2025-03-03 19:14:41,689 - ScenarioSimulation - INFO - Répertoire de sortie: output\small_network
+2025-03-03 19:14:41,689 - ScenarioSimulation - INFO - Démarrage de la simulation...
+2025-03-03 19:14:41,689 - ScenarioSimulation - INFO - Chargement du réseau depuis: scenarios\small_network\network.csv
+2025-03-03 19:14:41,697 - ScenarioSimulation - INFO - Réseau chargé avec 3 terminaux
+2025-03-03 19:14:41,697 - ScenarioSimulation - INFO - Chargement des services depuis: scenarios\small_network\services.csv
+2025-03-03 19:14:41,697 - ScenarioSimulation - INFO - Services chargés: 3
+2025-03-03 19:14:41,697 - ScenarioSimulation - INFO - Chargement des demandes depuis: scenarios\small_network\demands.csv
+2025-03-03 19:14:41,705 - ScenarioSimulation - INFO - Demandes chargées: 10
+2025-03-03 19:14:41,707 - ScenarioSimulation - INFO - Chargement des barges depuis: scenarios\small_network\barges.csv
+2025-03-03 19:14:41,710 - ScenarioSimulation - INFO - Barge B1 assignée au service S3
+2025-03-03 19:14:41,710 - ScenarioSimulation - INFO - Barge B2 assignée au service S2
+2025-03-03 19:14:41,711 - ScenarioSimulation - INFO - Barge B3 assignée au service S3
+2025-03-03 19:14:41,711 - ScenarioSimulation - INFO - Barge B4 assignée au service S2
+2025-03-03 19:14:41,711 - ScenarioSimulation - INFO - Barge B5 assignée au service S2
+2025-03-03 19:14:41,711 - ScenarioSimulation - INFO - Barges chargées: 5
+2025-03-03 19:14:41,713 - ScenarioSimulation - INFO - Exécution de la simulation pour une durée de 100...
+2025-03-03 19:14:41,722 - ScenarioSimulation - INFO - Simulation terminée!
+2025-03-03 19:14:41,722 - ScenarioSimulation - INFO - Analyse des résultats de la simulation...
+2025-03-03 19:14:41,722 - ScenarioSimulation - INFO - Analyse des événements...
+2025-03-03 19:14:41,730 - ScenarioSimulation - INFO - Analyse des événements sauvegardée: output\small_network\event_analysis.csv
+2025-03-03 19:14:42,178 - ScenarioSimulation - INFO - Distribution des événements sauvegardée: output\small_network\event_distribution.png
+2025-03-03 19:14:42,769 - ScenarioSimulation - INFO - Chronologie des événements sauvegardée: output\small_network\event_timeline.png
+2025-03-03 19:14:42,769 - ScenarioSimulation - INFO - Création des visualisations...
