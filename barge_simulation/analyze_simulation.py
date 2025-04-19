@@ -14,6 +14,7 @@ from src.simulation.event_scheduler import EventScheduler
 from src.visualization.movement_visualizer import MovementVisualizer
 from src.analysis.performance_analyzer import PerformanceAnalyzer
 from load_real_data import RealDataLoader
+from src.utils.db_manager import DBManager
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -217,6 +218,26 @@ def analyze_events(events, output_dir):
     plt.savefig(timeline_file)
     plt.close()
     print(f"Chronologie des événements sauvegardée: {timeline_file}")
+
+def analyze_simulation_data():
+    """
+    Analyse les données de simulation des différentes régions.
+    """
+    db_manager = DBManager()
+    
+    try:
+        # Récupérer les données de simulation des différentes régions
+        eu_demands = list(db_manager.dbs["eu-1"]["demands"].find({}))
+        asia_demands = list(db_manager.dbs["asia-1"]["demands"].find({}))
+        
+        print(f"Nombre de demandes en Europe: {len(eu_demands)}")
+        print(f"Nombre de demandes en Asie: {len(asia_demands)}")
+        
+        # Analyse des données...
+        # ...
+        
+    finally:
+        db_manager.close()
 
 if __name__ == "__main__":
     run_and_analyze_simulation()

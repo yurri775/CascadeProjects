@@ -1,0 +1,16 @@
+=== Erreur du scénario simulation_simple ===
+Code de sortie: 1
+
+=== STDOUT ===
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 169, in <module>
+    main()
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 117, in main
+    demands = create_demands()
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 78, in create_demands
+    Demand('D1', 'A', 'C', 50, 0, deadline=20),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Demand.__init__() got an unexpected keyword argument 'deadline'

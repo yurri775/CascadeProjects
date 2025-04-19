@@ -7,6 +7,15 @@ from model.demand import Demand
 from simulation.simulator import BargeSimulator
 from visualization.visualizer import SimulationVisualizer
 
+class Demand:
+    def __init__(self, id, origin, destination, quantity, time, deadline=None):
+        self.id = id
+        self.origin = origin
+        self.destination = destination
+        self.quantity = quantity
+        self.time = time
+        self.deadline = deadline
+
 def create_sample_network():
     """Create a sample network for testing."""
     network = SpaceTimeNetwork()
@@ -75,16 +84,16 @@ def create_demands():
     """Create sample transportation demands."""
     demands = [
         # From A to C
-        Demand('D1', 'A', 'C', 50, 0, deadline=20),
+        Demand('D1', 'A', 'C', 50, 0, due_date=20),
         
         # From B to D
-        Demand('D2', 'B', 'D', 75, 5, deadline=25),
+        Demand('D2', 'B', 'D', 75, 5, due_date=25),
         
         # From D to A
-        Demand('D3', 'D', 'A', 60, 10, deadline=30),
+        Demand('D3', 'D', 'A', 60, 10, due_date=30),
         
         # From C to B
-        Demand('D4', 'C', 'B', 40, 15, deadline=35)
+        Demand('D4', 'C', 'B', 40, 15, due_date=35)
     ]
     
     return demands

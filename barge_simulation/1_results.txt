@@ -1,20 +1,20 @@
 === Résultats de la simulation du scénario 1 ===
-Date d'exécution: 2025-04-19 14:53:14.015998
+Date d'exécution: 2025-04-19 14:34:53.485241
 
 Statistiques de la simulation:
 Temps de simulation: 100.00
-Événements traités: 0
+Événements traités: 8
 Distance totale parcourue: 0.00
 
 Statistiques des barges:
-Barge B1.0: Position=0, Charge=0, Status=idle
+Barge B1.0: Position=0, Charge=0, Status=en_transit
 Barge B2.0: Position=0, Charge=0, Status=idle
 Barge B3.0: Position=0, Charge=0, Status=idle
 
 Statistiques des demandes:
-Total: 0
+Total: 5
 Complétées: 0
 En cours: 0
-En attente: 0
-Assignées: 0
+En attente: 4
+Assignées: 1
 Échouées: 0

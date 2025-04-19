@@ -253,158 +253,56 @@ def visualize_network(network, output_file=None):
     else:
         plt.show()
 
-def run_scenario(scenario_id, data_dir="data", output_dir="output", max_time=100):
-    """
-    Exécute un scénario de simulation.
-    
-    Args:
-        scenario_id (str): Identifiant du scénario
-        data_dir (str): Répertoire contenant les fichiers d'entrée
-        output_dir (str): Répertoire pour les fichiers de sortie
-        max_time (float): Temps maximum de simulation
-    """
+def run_scenario(scenario_id, data_dir, output_dir, max_time=100):
+    """Exécute un scénario avec logs détaillés."""
     print(f"\n=== Exécution du scénario {scenario_id} ===")
     print(f"Date d'exécution: {datetime.now()}")
     
-    # Vérifier que les fichiers d'entrée existent
-    topology_file = f"{data_dir}/{scenario_id}_topologie.txt"
-    services_file = f"{data_dir}/{scenario_id}_services.txt"
-    barges_file = f"{data_dir}/{scenario_id}_flotte.txt"
-    demands_file = f"{data_dir}/{scenario_id}_demandes.txt"
-    
-    files_to_check = [topology_file, services_file, barges_file, demands_file]
-    missing_files = [f for f in files_to_check if not os.path.exists(f)]
-    
-    if missing_files:
-        print(f"\nErreur: Les fichiers suivants sont manquants:")
-        for f in missing_files:
-            print(f"  - {f}")
-        return
-    
-    # Créer le répertoire de sortie s'il n'existe pas
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    
-    # Fichiers de sortie
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    network_viz_file = f"{output_dir}/{scenario_id}_network.png"
-    timeline_file = f"{output_dir}/{scenario_id}_timeline_{timestamp}.png"
-    stats_file = f"{output_dir}/{scenario_id}_stats_{timestamp}.txt"
-    
     print("\nChargement des données...")
-    
-    # Charger la topologie
-    network = None
     try:
-        network = load_topology(topology_file)
-        if not network:
-            raise ValueError("Impossible de charger la topologie")
-    except Exception as e:
-        print(f"Erreur lors du chargement de la topologie: {e}")
-        print("Erreur: Impossible de charger la topologie du réseau.")
-        return
-    
-    print(f"\nRéseau chargé: {len(network.terminals)} terminaux, {sum(len(dests) for dests in network.connections.values())} connexions")
-    
-    # Charger les services
-    services = []
-    try:
-        services = load_services(services_file, network)
+        network = load_topology(f"{data_dir}/{scenario_id}_topologie.txt")
+        services = load_services(f"{data_dir}/{scenario_id}_services.txt", network)
+        barges = load_barges(f"{data_dir}/{scenario_id}_flotte.txt", services)
+        demands = load_demands(f"{data_dir}/{scenario_id}_demandes.txt")
+        
+        print(f"\nRéseau chargé: {len(network.terminals)} terminaux, {sum(len(dests) for dests in network.connections.values())} connexions")
         print(f"Services chargés: {len(services)}")
-    except Exception as e:
-        print(f"Erreur lors du chargement des services: {e}")
-        return
-    
-    # Charger les barges
-    barges = []
-    try:
-        barges = load_barges(barges_file, services)
         print(f"Barges chargées: {len(barges)}")
-    except Exception as e:
-        print(f"Erreur lors du chargement des barges: {e}")
-        return
-    
-    # Charger les demandes
-    demands = []
-    try:
-        demands = load_demands(demands_file)
         print(f"Demandes chargées: {len(demands)}")
+        
+        # Configuration du simulateur
+        simulator = BargeSimulator(network, RoutingManager())
+        
+        # Ajout des composants avec logs
+        for service in services:
+            print(f"\nAjout du service {service.service_id}")
+            print(f"  Route: {' -> '.join([leg[0] for leg in service.legs] + [service.legs[-1][1]])}")
+            simulator.add_service(service)
+            
+        for barge in barges:
+            print(f"\nAjout de la barge {barge.barge_id}")
+            print(f"  Position: {barge.position}")
+            print(f"  Capacité: {barge.capacity}")
+            simulator.add_barge(barge)
+        
+        for demand in demands:
+            print(f"\nAjout de la demande {demand.demand_id}")
+            print(f"  Origine: {demand.origin}")
+            print(f"  Destination: {demand.destination}")
+            print(f"  Volume: {demand.volume}")
+            simulator.add_demand(demand)
+        
+        print("\nDémarrage de la simulation...")
+        simulator.run(until=max_time)
+        
+        print("\nSimulation terminée!")
+        stats = simulator.get_statistics()
+        print(f"Temps de simulation: {stats['simulation_time']:.2f}")
+        print(f"Événements traités: {stats['events_processed']}")
+        print(f"Distance totale parcourue: {stats['total_distance']:.2f}")
+        
     except Exception as e:
-        print(f"Erreur lors du chargement des demandes: {e}")
-        return
-    
-    # Visualiser le réseau
-    visualize_network(network, network_viz_file)
-    
-    # Créer le gestionnaire de routage
-    routing_manager = RoutingManager()
-    
-    # Ajouter les services au gestionnaire de routage
-    for service in services:
-        routing_manager.add_service(service)
-    
-    # Créer le simulateur
-    simulator = BargeSimulator(network, routing_manager)
-    
-    # Ajouter les barges
-    for barge in barges:
-        simulator.add_barge(barge)
-    
-    # Ajouter les demandes
-    for demand in demands:
-        simulator.add_demand(demand)
-    
-    # Exécuter la simulation
-    print("\nDémarrage de la simulation...")
-    simulator.run(until=max_time)
-    
-    # Récupérer les statistiques
-    stats = simulator.get_statistics()
-    
-    # Afficher les résultats
-    print("\nSimulation terminée!")
-    print(f"\nStatistiques de la simulation:")
-    print(f"Temps de simulation: {stats['simulation_time']:.2f}")
-    print(f"Événements traités: {stats['events_processed']}")
-    print(f"Distance totale parcourue: {stats['total_distance']:.2f}")
-    
-    print("\nStatistiques des barges:")
-    for barge_id, barge_stats in stats['barge_statistics'].items():
-        print(f"Barge {barge_id}: Position={barge_stats['position']}, Charge={barge_stats['load']}, Status={barge_stats['status']}")
-    
-    print("\nStatistiques des demandes:")
-    demand_stats = stats['demand_statistics']
-    print(f"Total: {demand_stats['total']}")
-    print(f"Complétées: {demand_stats['completed']}")
-    print(f"En cours: {demand_stats['in_progress']}")
-    print(f"En attente: {demand_stats['pending']}")
-    print(f"Assignées: {demand_stats['assigned']}")
-    print(f"Échouées: {demand_stats['failed']}")
-    
-    # Enregistrer les résultats
-    results_file = f"{output_dir}/{scenario_id}_results.txt"
-    with open(results_file, 'w') as f:
-        f.write(f"=== Résultats de la simulation du scénario {scenario_id} ===\n")
-        f.write(f"Date d'exécution: {datetime.now()}\n\n")
-        
-        f.write(f"Statistiques de la simulation:\n")
-        f.write(f"Temps de simulation: {stats['simulation_time']:.2f}\n")
-        f.write(f"Événements traités: {stats['events_processed']}\n")
-        f.write(f"Distance totale parcourue: {stats['total_distance']:.2f}\n\n")
-        
-        f.write(f"Statistiques des barges:\n")
-        for barge_id, barge_stats in stats['barge_statistics'].items():
-            f.write(f"Barge {barge_id}: Position={barge_stats['position']}, Charge={barge_stats['load']}, Status={barge_stats['status']}\n")
-        
-        f.write(f"\nStatistiques des demandes:\n")
-        f.write(f"Total: {demand_stats['total']}\n")
-        f.write(f"Complétées: {demand_stats['completed']}\n")
-        f.write(f"En cours: {demand_stats['in_progress']}\n")
-        f.write(f"En attente: {demand_stats['pending']}\n")
-        f.write(f"Assignées: {demand_stats['assigned']}\n")
-        f.write(f"Échouées: {demand_stats['failed']}\n")
-    
-    print(f"\nRésultats enregistrés dans {results_file}")
+        print(f"Erreur lors de l'exécution du scénario: {e}")
 
 def main():
     """

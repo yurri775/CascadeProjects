@@ -48,7 +48,13 @@ def run_scenario(script_name, scenario_name):
             for file in os.listdir("output"):
                 src = os.path.join("output", file)
                 dst = os.path.join(output_dir, file)
-                os.rename(src, file)
+                try:
+                    if os.path.exists(dst):
+                        # Supprimer ou renommer l'ancien fichier
+                        os.remove(dst)
+                    os.rename(src, dst)
+                except Exception as e:
+                    print(f"Erreur lors du déplacement du fichier: {e}")
         
         print(f"✓ Scénario terminé avec succès")
         print(f"  Durée: {duration:.2f} secondes")

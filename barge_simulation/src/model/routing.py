@@ -139,3 +139,21 @@ class RoutingManager:
                 else:
                     print("X", end="\t")
             print()
+
+    def get_route(self, start, end, network):
+        """Calcule la meilleure route entre deux points."""
+        if not hasattr(network, 'get_distance'):
+            return [start, end]  # Route directe par défaut
+            
+        route = []
+        current = start
+        
+        while current != end:
+            next_terminal = min(
+                network.get_connected_terminals(current),
+                key=lambda t: network.get_distance(t, end)
+            )
+            route.append(next_terminal)
+            current = next_terminal
+            
+        return route

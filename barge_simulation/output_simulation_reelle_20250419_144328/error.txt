@@ -1,0 +1,13 @@
+=== Erreur du scénario simulation_reelle ===
+Code de sortie: 1
+
+=== STDOUT ===
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\run_simulation.py", line 134, in <module>
+    main()
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\run_simulation.py", line 113, in main
+    demand.availability_time,
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Demand' object has no attribute 'availability_time'

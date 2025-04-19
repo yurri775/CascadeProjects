@@ -1,0 +1,20 @@
+version: '3' 
+ 
+services: 
+  db-eu-1: 
+    image: mongo:latest 
+    volumes: 
+      - eu-data-1:/data/db 
+    ports: 
+      - 27020:27017 
+ 
+  db-eu-2: 
+    image: mongo:latest 
+    volumes: 
+      - eu-data-2:/data/db 
+    ports: 
+      - 27021:27017 
+ 
+volumes: 
+  eu-data-1: 
+  eu-data-2: 

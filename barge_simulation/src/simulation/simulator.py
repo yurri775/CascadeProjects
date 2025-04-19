@@ -4,6 +4,7 @@ from model.demand import DemandManager
 from dataclasses import dataclass
 from typing import Dict, List
 from datetime import datetime
+from src.utils.db_manager import DBManager
 
 @dataclass
 class SimulationConfig:
@@ -38,8 +39,10 @@ class BargeSimulator:
         self.config = config or SimulationConfig()
         self.network = network
         self.routing_manager = routing_manager
+        self.db_manager = DBManager()
         self.barges = {}  # Dictionary of barge_id -> Barge
         self.services = {}  # Dictionary of service_id -> Service
+        self.demands = {}  # Dictionary of demand_id -> Demand
         self.current_time = 0
         self.max_time = self.config.MAX_TIME  # Maximum simulation time
         self.scheduler = EventScheduler()
@@ -80,6 +83,19 @@ class BargeSimulator:
             service (Service): The service to add
         """
         self.services[service.service_id] = service
+        # Save to database
+        self.db_manager.save_service(service)
+        
+    def add_demand(self, demand):
+        """
+        Add a demand to the simulation.
+        
+        Args:
+            demand (Demand): The demand to add
+        """
+        self.demands[demand.demand_id] = demand
+        # Save to database
+        self.db_manager.save_demand(demand)
         
     def add_event(self, time, event_type, data=None):
         """
@@ -94,11 +110,15 @@ class BargeSimulator:
         self.scheduler.add_event(event)
         return event
         
-    def run(self):
+    def run(self, until=100):
         print(f"Démarrage de la simulation: {datetime.now()}")
-        while self.current_time < self.config.MAX_TIME:
-            if not self.process_next_event():
-                break
+        try:
+            while self.current_time < until:
+                if not self.process_next_event():
+                    break
+            self._save_results_to_db()
+        finally:
+            self.db_manager.close()
         print(f"Fin de la simulation: {datetime.now()}")
 
     def process_next_event(self):
@@ -429,6 +449,11 @@ class BargeSimulator:
                 'cargo_handled': barge.total_cargo_handled,
                 'utilization_rate': barge.calculate_utilization()
             }
+
+    def _save_results_to_db(self):
+        """Sauvegarde les résultats de la simulation"""
+        for demand in self.demands.values():
+            self.db_manager.save_demand(demand, self._get_region_for_demand(demand))
 
     def get_statistics(self):
         """

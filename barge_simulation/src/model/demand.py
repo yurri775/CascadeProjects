@@ -14,9 +14,7 @@ class Demand:
         'E': 'Express'
     }
     
-    def __init__(self, demand_id, origin, destination, volume, 
-                 availability_time, due_date, customer_type='R',
-                 fare_class='S', unit_fare=0, container_type='Standard'):
+    def __init__(self, demand_id, origin, destination, volume, arrival_time, due_date=None):
         """
         Initialise une demande de transport.
         
@@ -25,30 +23,20 @@ class Demand:
             origin (str): Terminal d'origine
             destination (str): Terminal de destination
             volume (int): Volume en TEUs
-            availability_time (int): Temps de disponibilité à l'origine
-            due_date (int): Date limite d'arrivée à destination
-            customer_type (str): Type de client (R/P/F)
-            fare_class (str): Classe tarifaire (S/E)
-            unit_fare (float): Tarif unitaire
-            container_type (str): Type de conteneur
+            arrival_time (int): Temps d'arrivée à l'origine
+            due_date (int, optional): Date limite d'arrivée à destination
         """
         self.demand_id = demand_id
         self.origin = origin
         self.destination = destination
         self.volume = volume
-        self.availability_time = availability_time
-        self.due_date = due_date
-        self.customer_type = customer_type
-        self.fare_class = fare_class
-        self.unit_fare = unit_fare
-        self.container_type = container_type
+        self.arrival_time = arrival_time
+        self.due_date = due_date if due_date is not None else arrival_time + 20
         self.status = "pending"  # pending, in_progress, completed, rejected
         
         # Attributs pour le suivi de l'assignation et du traitement
         self.assigned_barge = None
-        self.assignment_time = None
-        self.start_time = None
-        self.completion_time = None
+        self.current_position = origin
         
     @property
     def is_regular(self):
@@ -147,7 +135,7 @@ class DemandManager:
             list: List of pending demands
         """
         return [demand for demand in self.demands.values() 
-                if demand.status == "pending" and demand.availability_time <= current_time]
+                if demand.status == "pending" and demand.arrival_time <= current_time]
                 
     def get_assigned_demands(self, barge_id):
         """

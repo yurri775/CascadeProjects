@@ -1,5 +1,5 @@
 === Résultats de la simulation du scénario 1 ===
-Date d'exécution: 2025-04-19 14:53:14.015998
+Date d'exécution: 2025-04-19 14:43:23.476121
 
 Statistiques de la simulation:
 Temps de simulation: 100.00
