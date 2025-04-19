@@ -14,7 +14,10 @@ class Demand:
         'E': 'Express'
     }
     
-    def __init__(self, demand_id, origin, destination, volume, arrival_time, due_date=None):
+    def __init__(self, demand_id, origin, destination, volume, 
+                 arrival_time=None, availability_time=None, due_date=None,
+                 customer_type=None, fare_class=None, unit_fare=0, 
+                 container_type=None, **kwargs):  # Ajout de container_type et kwargs
         """
         Initialise une demande de transport.
         
@@ -23,20 +26,35 @@ class Demand:
             origin (str): Terminal d'origine
             destination (str): Terminal de destination
             volume (int): Volume en TEUs
-            arrival_time (int): Temps d'arrivée à l'origine
+            arrival_time (int, optional): Temps d'arrivée à l'origine
+            availability_time (int, optional): Temps de disponibilité à l'origine
             due_date (int, optional): Date limite d'arrivée à destination
+            customer_type (str, optional): Type de client ('R', 'P', 'F')
+            fare_class (str, optional): Classe tarifaire ('S', 'E')
+            unit_fare (float, optional): Valeur tarifaire par TEU
+            container_type (str, optional): Type de conteneur
         """
         self.demand_id = demand_id
         self.origin = origin
         self.destination = destination
         self.volume = volume
-        self.arrival_time = arrival_time
-        self.due_date = due_date if due_date is not None else arrival_time + 20
-        self.status = "pending"  # pending, in_progress, completed, rejected
         
-        # Attributs pour le suivi de l'assignation et du traitement
+        # Gestion des différents noms d'attributs de temps
+        self.arrival_time = arrival_time
+        self.availability_time = availability_time if availability_time is not None else arrival_time
+        self.due_date = due_date
+        
+        # Informations sur le client et la tarification
+        self.customer_type = customer_type  # R (Regular), P (Partial-spot), F (Fully-spot)
+        self.fare_class = fare_class        # S (Standard), E (Express)
+        self.unit_fare = unit_fare          # Valeur tarifaire par TEU
+        self.container_type = container_type # Type de conteneur
+        
+        # État initial
+        self.status = "pending"
         self.assigned_barge = None
         self.current_position = origin
+        self.assigned_route = []
         
     @property
     def is_regular(self):

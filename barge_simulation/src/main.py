@@ -4,7 +4,14 @@ from model.network import SpaceTimeNetwork
 from model.service import Service
 from model.routing import RoutingManager
 from model.demand import Demand
-from simulation.simulator import BargeSimulator
+try:
+    from src.simulation.simulator import BargeSimulator
+except ImportError:
+    try:
+        from simulation.simulator import BargeSimulator
+    except ImportError:
+        print("Impossible d'importer le simulateur de barges.")
+        exit(1)
 from visualization.visualizer import SimulationVisualizer
 
 class Demand:
@@ -106,7 +113,17 @@ def main():
     routing_manager = RoutingManager()
     
     # Create simulator
-    simulator = BargeSimulator(network, routing_manager)
+    try:
+        # Essayez d'abord avec tous les paramètres
+        simulator = BargeSimulator(network, routing_manager)
+    except TypeError as e:
+        try:
+            # Si échec, essayez avec juste le réseau
+            simulator = BargeSimulator(network)
+        except TypeError:
+            # En dernier recours, sans paramètres
+            simulator = BargeSimulator()
+            simulator.network = network
     
     # Create and add services
     services = create_services()

@@ -1,0 +1,12 @@
+=== Erreur du scénario simulation_simple ===
+Code de sortie: 1
+
+=== STDOUT ===
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 7, in <module>
+    from simulation.simulator import BargeSimulator
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\simulation\simulator.py", line 7, in <module>
+    from src.utils.db_manager import DBManager
+ModuleNotFoundError: No module named 'src.utils'

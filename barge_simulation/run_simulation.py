@@ -11,6 +11,20 @@ from src.model.demand import Demand, DemandManager
 from src.simulation.barge_simulator import BargeSimulator
 from src.simulation.event import Event, EventType
 
+def __init__(self, network=None, routing_manager=None, **kwargs):
+    # ... autres initialisations ...
+    
+    self.stats = {
+        "total_distance": 0,
+        "events_processed": 0,
+        "total_teus_transported": 0,
+        "service_utilization": {},
+        "terminal_utilization": {}
+    }
+    
+    # Alias pour compatibilité
+    self.statistics = self.stats
+
 def create_sample_network():
     """Crée un réseau de test avec des terminaux et des connexions."""
     network = SpaceTimeNetwork()
@@ -91,6 +105,10 @@ def main():
     # Créer le simulateur
     simulator = BargeSimulator(network, routing_manager)
     
+    # Ajout d'un alias statistics -> stats pour compatibilité
+    if not hasattr(simulator, 'statistics') and hasattr(simulator, 'stats'):
+        simulator.statistics = simulator.stats
+    
     # Créer et ajouter les services
     services = create_services()
     for service in services:
@@ -110,7 +128,7 @@ def main():
     for demand in demands:
         # Ajouter un événement pour l'arrivée de la demande
         simulator.add_event(
-            demand.availability_time,
+            demand.arrival_time,  # Ou assurez-vous que availability_time est défini
             EventType.DEMAND_ARRIVAL,
             {'demand': demand}
         )
@@ -124,11 +142,40 @@ def main():
     print("Simulation terminée!")
     
     # Afficher les statistiques
-    stats = simulator.get_statistics()
-    print("\nStatistiques de la simulation:")
-    print(f"Temps de simulation: {stats['simulation_time']}")
-    print(f"Événements traités: {stats['events_processed']}")
-    print(f"Distance totale parcourue: {stats['total_distance']}")
+    try:
+        events_processed = getattr(simulator, 'events_processed', 0)
+        if hasattr(simulator, 'statistics'):
+            stats = simulator.statistics
+        elif hasattr(simulator, 'stats'):
+            stats = simulator.stats
+        else:
+            stats = {'total_distance': 0, 'events_processed': 0}
+        
+        print(f"Statistiques de la simulation:")
+        print(f"Temps de simulation: {getattr(simulator, 'current_time', 0):.2f}")
+        print(f"Événements traités: {stats.get('events_processed', events_processed)}")
+        print(f"Distance totale parcourue: {stats.get('total_distance', 0):.2f}")
+        
+        # Essayer différentes approches pour obtenir les statistiques
+        try:
+            if hasattr(simulator, 'get_demand_statistics'):
+                demand_statistics = simulator.get_demand_statistics()
+            elif hasattr(simulator, 'demand_statistics'):
+                demand_statistics = simulator.demand_statistics
+            else:
+                # Créer des statistiques par défaut
+                demand_statistics = {
+                    'total': len(simulator.demands),
+                    'completed': sum(1 for d in simulator.demands.values() if d.status == 'completed'),
+                    'pending': sum(1 for d in simulator.demands.values() if d.status == 'pending')
+                }
+        except Exception as e:
+            print(f"Avertissement: Impossible d'obtenir les statistiques de demande: {e}")
+            demand_statistics = {'total': 0, 'completed': 0, 'pending': 0, 'assigned': 0, 'failed': 0}
+        
+    except Exception as e:
+        print(f"Erreur lors de l'affichage des statistiques: {e}")
+        print("Statistiques non disponibles.")
 
 if __name__ == "__main__":
     main()

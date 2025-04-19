@@ -1,0 +1,10 @@
+=== Erreur du scénario analyse_complete ===
+Code de sortie: 1
+
+=== STDOUT ===
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\analyze_simulation.py", line 17, in <module>
+    from src.utils.db_manager import DBManager
+ModuleNotFoundError: No module named 'src.utils.db_manager'

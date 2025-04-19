@@ -1,0 +1,13 @@
+=== Erreur du scénario simulation_simple ===
+Code de sortie: 1
+
+=== STDOUT ===
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 195, in <module>
+    main()
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 131, in main
+    simulator.add_service(service)
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BargeSimulator' object has no attribute 'add_service'

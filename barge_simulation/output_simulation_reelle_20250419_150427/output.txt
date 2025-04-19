@@ -1,0 +1,41 @@
+=== Sortie du scénario simulation_reelle ===
+Durée: 0.81 secondes
+
+=== STDOUT ===
+Démarrage de la simulation...
+Démarrage de la simulation...
+Traitement de l'événement: Event(id=1, time=0, type=BARGE_DEPARTURE, data={'barge_id': 'B1', 'from_terminal': 'A', 'to_terminal': 'B'})
+Traitement de l'événement: Event(id=2, time=0, type=BARGE_DEPARTURE, data={'barge_id': 'B2', 'from_terminal': 'D', 'to_terminal': 'C'})
+Traitement de l'événement: Event(id=3, time=0, type=DEMAND_ARRIVAL, data={'demand': <src.model.demand.Demand object at 0x0000028EA2B99D90>})
+Demande None arrivée à t=0
+Traitement de l'événement: Event(id=8, time=0, type=BARGE_DEPARTURE, data={'barge_id': 'B1', 'from_terminal': 'A', 'to_terminal': 'Unknown'})
+Erreur: Pas de connexion entre A et Unknown
+Traitement de l'événement: Event(id=6, time=4, type=BARGE_ARRIVAL, data={'barge_id': 'B1', 'terminal_id': 'B'})
+Traitement de l'événement: Event(id=9, time=0, type=BARGE_DEPARTURE, data={'barge_id': 'B1', 'from_terminal': 'B', 'to_terminal': 'C'})
+Traitement de l'événement: Event(id=7, time=4, type=BARGE_ARRIVAL, data={'barge_id': 'B2', 'terminal_id': 'C'})
+Traitement de l'événement: Event(id=11, time=0, type=BARGE_DEPARTURE, data={'barge_id': 'B2', 'from_terminal': 'C', 'to_terminal': 'B'})
+Traitement de l'événement: Event(id=10, time=4, type=BARGE_ARRIVAL, data={'barge_id': 'B1', 'terminal_id': 'C'})
+Traitement de l'événement: Event(id=13, time=0, type=BARGE_DEPARTURE, data={'barge_id': 'B1', 'from_terminal': 'C', 'to_terminal': 'D'})
+Traitement de l'événement: Event(id=12, time=4, type=BARGE_ARRIVAL, data={'barge_id': 'B2', 'terminal_id': 'B'})
+Traitement de l'événement: Event(id=15, time=0, type=BARGE_DEPARTURE, data={'barge_id': 'B2', 'from_terminal': 'B', 'to_terminal': 'A'})
+Traitement de l'événement: Event(id=14, time=4, type=BARGE_ARRIVAL, data={'barge_id': 'B1', 'terminal_id': 'D'})
+Barge B1 a atteint la fin de sa route à D
+Traitement de l'événement: Event(id=16, time=4, type=BARGE_ARRIVAL, data={'barge_id': 'B2', 'terminal_id': 'A'})
+Barge B2 a atteint la fin de sa route à A
+Traitement de l'événement: Event(id=4, time=5, type=DEMAND_ARRIVAL, data={'demand': <src.model.demand.Demand object at 0x0000028EA2B99E20>})
+Demande None arrivée à t=0
+Traitement de l'événement: Event(id=17, time=0, type=BARGE_DEPARTURE, data={'barge_id': 'B1', 'from_terminal': 'D', 'to_terminal': 'Unknown'})
+Erreur: Pas de connexion entre D et Unknown
+Traitement de l'événement: Event(id=5, time=10, type=DEMAND_ARRIVAL, data={'demand': <src.model.demand.Demand object at 0x0000028EA2B99E50>})
+Demande None arrivée à t=0
+Traitement de l'événement: Event(id=18, time=0, type=BARGE_DEPARTURE, data={'barge_id': 'B1', 'from_terminal': 'D', 'to_terminal': 'Unknown'})
+Erreur: Pas de connexion entre D et Unknown
+Simulation terminée à t=0: Plus d'événements.
+Simulation terminée!
+
+Statistiques de la simulation:
+Temps de simulation: 0
+Événements traités: 0
+Distance totale parcourue: 24
+
+=== STDERR ===

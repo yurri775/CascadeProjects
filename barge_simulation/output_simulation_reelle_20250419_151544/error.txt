@@ -1,0 +1,17 @@
+=== Erreur du scénario simulation_reelle ===
+Code de sortie: 1
+
+=== STDOUT ===
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\run_simulation.py", line 134, in <module>
+    main()
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\run_simulation.py", line 106, in main
+    simulator.add_barge(barge)
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\simulation\barge_simulator.py", line 57, in add_barge
+    self.add_event(0, EventType.BARGE_DEPARTURE, {
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\simulation\barge_simulator.py", line 98, in add_event
+    return self.scheduler.add_event(time, event_type, data)
+           ^^^^^^^^^^^^^^
+AttributeError: 'BargeSimulator' object has no attribute 'scheduler'

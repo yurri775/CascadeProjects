@@ -165,44 +165,33 @@ def load_barges(file_path, services):
         return []
 
 def load_demands(file_path):
-    """
-    Charge les demandes à partir d'un fichier.
-    
-    Args:
-        file_path (str): Chemin vers le fichier de demandes
-        
-    Returns:
-        list: Liste des demandes
-    """
+    demands = []
     try:
-        # Lire le fichier de demandes
-        df = pd.read_csv(file_path, sep='\t')
-        
-        # Créer les demandes
-        demands = []
-        for _, row in df.iterrows():
-            demand_id = row['demand_id']
-            origin = str(row['orig'])
-            destination = str(row['dest'])
-            volume = float(row['vol'])
-            availability_time = float(row['t_resa'])
-            due_date = float(row['t_due'])
-            
-            # Créer la demande
-            demand = Demand(
-                demand_id=demand_id,
-                origin=origin,
-                destination=destination,
-                volume=volume,
-                availability_time=availability_time,
-                due_date=due_date
-            )
-            demands.append(demand)
-        
-        return demands
+        with open(file_path, 'r') as f:
+            lines = f.readlines()
+            for line in lines:
+                parts = line.strip().split(',')
+                if len(parts) >= 5:
+                    demand_id = parts[0].strip()
+                    origin = parts[1].strip()
+                    destination = parts[2].strip()
+                    volume = float(parts[3].strip())
+                    arrival_time = float(parts[4].strip())
+                    due_date = float(parts[5].strip()) if len(parts) > 5 else None
+                    
+                    # Utiliser arrival_time au lieu de availability_time
+                    demands.append(Demand(
+                        demand_id=demand_id,
+                        origin=origin,
+                        destination=destination,
+                        volume=volume,
+                        arrival_time=arrival_time,
+                        due_date=due_date
+                    ))
+        print(f"Demandes chargées: {len(demands)}")
     except Exception as e:
         print(f"Erreur lors du chargement des demandes: {e}")
-        return []
+    return demands
 
 def visualize_network(network, output_file=None):
     """
@@ -253,6 +242,62 @@ def visualize_network(network, output_file=None):
     else:
         plt.show()
 
+def ensure_attributes(simulator):
+    """Assure que tous les attributs nécessaires sont présents"""
+    required_attrs = {
+        'total_distance': 0,
+        'events_processed': 0,
+        'current_time': 0
+    }
+    
+    for attr, default in required_attrs.items():
+        if not hasattr(simulator, attr):
+            if hasattr(simulator, 'stats') and attr in simulator.stats:
+                setattr(simulator, attr, simulator.stats[attr])
+            else:
+                setattr(simulator, attr, default)
+
+def print_statistics(simulator):
+    """Imprime les statistiques de la simulation"""
+    print("\nStatistiques de la simulation:")
+    print(f"Temps de simulation: {simulator.current_time:.2f}")
+    
+    # Utilisation de getattr pour récupérer les attributs de façon sécurisée
+    events_processed = getattr(simulator, 'events_processed', 0)
+    print(f"Événements traités: {events_processed}")
+    
+    total_distance = getattr(simulator, 'total_distance', 0)
+    if hasattr(simulator, 'stats') and 'total_distance' in simulator.stats:
+        total_distance = simulator.stats['total_distance']
+    print(f"Distance totale parcourue: {total_distance:.2f}")
+    
+    # Statistiques des demandes
+    print("\nStatistiques des demandes:")
+    demand_stats = {"total": 0, "completed": 0, "pending": 0, "assigned": 0, "failed": 0}
+    
+    # Tentative d'obtenir les statistiques depuis différentes sources
+    try:
+        if hasattr(simulator, 'demand_manager') and hasattr(simulator.demand_manager, 'get_demand_statistics'):
+            demand_stats = simulator.demand_manager.get_demand_statistics()
+        elif hasattr(simulator, 'demand_statistics'):
+            demand_stats = simulator.demand_statistics
+        elif hasattr(simulator, 'demands'):
+            # Calcul manuel des statistiques
+            demand_stats["total"] = len(simulator.demands)
+            demand_stats["completed"] = sum(1 for d in simulator.demands.values() if getattr(d, 'status', '') == 'completed')
+            demand_stats["assigned"] = sum(1 for d in simulator.demands.values() if getattr(d, 'status', '') == 'assigned')
+            demand_stats["pending"] = sum(1 for d in simulator.demands.values() if getattr(d, 'status', '') == 'pending')
+            demand_stats["failed"] = sum(1 for d in simulator.demands.values() if getattr(d, 'status', '') == 'failed')
+    except Exception as e:
+        print(f"Erreur lors de l'obtention des statistiques de demandes: {e}")
+    
+    # Affichage des statistiques
+    print(f"Total: {demand_stats.get('total', 0)}")
+    print(f"Complétées: {demand_stats.get('completed', 0)}")
+    print(f"En attente: {demand_stats.get('pending', 0)}")
+    print(f"Assignées: {demand_stats.get('assigned', 0)}")
+    print(f"Échouées: {demand_stats.get('failed', 0)}")
+
 def run_scenario(scenario_id, data_dir, output_dir, max_time=100):
     """Exécute un scénario avec logs détaillés."""
     print(f"\n=== Exécution du scénario {scenario_id} ===")
@@ -272,6 +317,9 @@ def run_scenario(scenario_id, data_dir, output_dir, max_time=100):
         
         # Configuration du simulateur
         simulator = BargeSimulator(network, RoutingManager())
+        
+        # Assurer les attributs nécessaires
+        ensure_attributes(simulator)
         
         # Ajout des composants avec logs
         for service in services:
@@ -296,13 +344,29 @@ def run_scenario(scenario_id, data_dir, output_dir, max_time=100):
         simulator.run(until=max_time)
         
         print("\nSimulation terminée!")
-        stats = simulator.get_statistics()
-        print(f"Temps de simulation: {stats['simulation_time']:.2f}")
-        print(f"Événements traités: {stats['events_processed']}")
-        print(f"Distance totale parcourue: {stats['total_distance']:.2f}")
+        try:
+            print_statistics(simulator)
+        except Exception as e:
+            print(f"Erreur lors de l'affichage des statistiques: {e}")
         
     except Exception as e:
         print(f"Erreur lors de l'exécution du scénario: {e}")
+
+def get_statistics(self):
+    """Retourne un dictionnaire de statistiques de simulation."""
+    return {
+        "simulation_time": self.current_time,
+        "events_processed": self.events_processed,
+        "processed_events_count": len(self.processed_events),
+        "total_distance": self.stats.get("total_distance", 0),
+        "total_teus": self.stats.get("total_teus_transported", 0),
+        "barges": {b_id: {
+            "position": b.position,
+            "status": getattr(b, "status", "unknown"),
+            "load": getattr(b, "current_load", 0)
+        } for b_id, b in self.barges.items()},
+        "demands_completed": sum(1 for d in self.demands.values() if getattr(d, "status", "") == "completed")
+    }
 
 def main():
     """

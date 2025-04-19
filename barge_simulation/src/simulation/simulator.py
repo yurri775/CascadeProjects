@@ -4,7 +4,13 @@ from model.demand import DemandManager
 from dataclasses import dataclass
 from typing import Dict, List
 from datetime import datetime
-from src.utils.db_manager import DBManager
+
+try:
+    from src.utils.db_manager import DBManager
+    db_available = True
+except ImportError:
+    print("Module db_manager non disponible. Les données ne seront pas persistées en base.")
+    db_available = False
 
 @dataclass
 class SimulationConfig:
@@ -27,19 +33,17 @@ class BargeSimulator:
     """
     Simulator for the barge transportation system using discrete event simulation.
     """
-    def __init__(self, network=None, routing_manager=None, config: SimulationConfig = None):
-        """
-        Initialize the simulator.
-        
-        Args:
-            network (SpaceTimeNetwork): The space-time network
-            routing_manager (RoutingManager): The routing manager
-            config (SimulationConfig, optional): Configuration for the simulation
-        """
-        self.config = config or SimulationConfig()
+    def __init__(self, network, routing_manager=None):
         self.network = network
         self.routing_manager = routing_manager
-        self.db_manager = DBManager()
+        
+        # Gestion optionnelle de la base de données
+        if 'db_available' in globals() and db_available:
+            self.db_manager = DBManager()
+        else:
+            self.db_manager = None
+
+        self.config = SimulationConfig()
         self.barges = {}  # Dictionary of barge_id -> Barge
         self.services = {}  # Dictionary of service_id -> Service
         self.demands = {}  # Dictionary of demand_id -> Demand
@@ -84,7 +88,8 @@ class BargeSimulator:
         """
         self.services[service.service_id] = service
         # Save to database
-        self.db_manager.save_service(service)
+        if self.db_manager:
+            self.db_manager.save_service(service)
         
     def add_demand(self, demand):
         """
@@ -95,7 +100,8 @@ class BargeSimulator:
         """
         self.demands[demand.demand_id] = demand
         # Save to database
-        self.db_manager.save_demand(demand)
+        if self.db_manager:
+            self.db_manager.save_demand(demand)
         
     def add_event(self, time, event_type, data=None):
         """
@@ -116,9 +122,11 @@ class BargeSimulator:
             while self.current_time < until:
                 if not self.process_next_event():
                     break
-            self._save_results_to_db()
+            if self.db_manager:
+                self._save_results_to_db()
         finally:
-            self.db_manager.close()
+            if self.db_manager:
+                self.db_manager.close()
         print(f"Fin de la simulation: {datetime.now()}")
 
     def process_next_event(self):
@@ -452,8 +460,9 @@ class BargeSimulator:
 
     def _save_results_to_db(self):
         """Sauvegarde les résultats de la simulation"""
-        for demand in self.demands.values():
-            self.db_manager.save_demand(demand, self._get_region_for_demand(demand))
+        if self.db_manager:
+            for demand in self.demands.values():
+                self.db_manager.save_demand(demand, self._get_region_for_demand(demand))
 
     def get_statistics(self):
         """

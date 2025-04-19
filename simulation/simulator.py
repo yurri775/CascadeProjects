@@ -1,3 +1,4 @@
+from tkinter import EventType
 from utils.config import *
 from utils.file_manager import FileManager
 from datetime import datetime

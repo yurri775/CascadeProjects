@@ -14,11 +14,17 @@ from src.simulation.event_scheduler import EventScheduler
 from src.visualization.movement_visualizer import MovementVisualizer
 from src.analysis.performance_analyzer import PerformanceAnalyzer
 from load_real_data import RealDataLoader
-from src.utils.db_manager import DBManager
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
+
+try:
+    from src.utils.db_manager import DBManager
+    db_available = True
+except ImportError:
+    print("Module db_manager non disponible. L'analyse utilisera uniquement les fichiers locaux.")
+    db_available = False
 
 def ensure_output_directory():
     """Crée le répertoire de sortie s'il n'existe pas."""
@@ -238,6 +244,27 @@ def analyze_simulation_data():
         
     finally:
         db_manager.close()
+
+def analyze_results():
+    """Analyse les résultats de simulation"""
+    print("Analyse des résultats de simulation...")
+    
+    # Tente d'utiliser MongoDB si disponible
+    if db_available:
+        try:
+            db_manager = DBManager()
+            if db_manager.enable():
+                print("Analyse des données depuis MongoDB...")
+                # Votre code d'analyse MongoDB ici
+                db_manager.close()
+            else:
+                print("MongoDB n'est pas disponible. Utilisation des fichiers locaux.")
+        except Exception as e:
+            print(f"Erreur lors de l'analyse MongoDB: {e}")
+            
+    # Analyse à partir des fichiers locaux
+    print("Analyse des fichiers de résultats locaux...")
+    # Votre code d'analyse de fichiers locaux ici
 
 if __name__ == "__main__":
     run_and_analyze_simulation()

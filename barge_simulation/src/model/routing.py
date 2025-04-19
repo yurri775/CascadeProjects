@@ -157,3 +157,47 @@ class RoutingManager:
             current = next_terminal
             
         return route
+
+# Dans run_scenario.py
+from src.model.network import Network
+
+def load_network():
+    """Charge le réseau de transport"""
+    try:
+        # Tentative de chargement à partir d'un fichier
+        network = Network()
+        # Configuration minimale pour garantir un réseau valide
+        for i in range(4):
+            network.add_terminal(f"{i}", (i*10, i*5))
+        
+        # Connexions entre terminaux
+        for i in range(4):
+            for j in range(4):
+                if i != j:
+                    network.add_connection(f"{i}", f"{j}")
+        
+        print(f"Réseau chargé: {len(network.terminals)} terminaux, {len(network.connections)} connexions")
+        return network
+    except Exception as e:
+        print(f"Erreur lors du chargement du réseau: {e}")
+        # En cas d'erreur, créer un réseau minimal par défaut
+        default_network = Network()
+        for i in range(4):
+            default_network.add_terminal(str(i), (i*10, 0))
+        for i in range(3):
+            default_network.add_connection(str(i), str(i+1))
+            default_network.add_connection(str(i+1), str(i))
+        return default_network
+
+# Dans la fonction principale
+def main():
+    # ...
+    # Assurez-vous d'initialiser le réseau correctement
+    network = load_network()
+    if network is None:
+        print("Erreur critique: Impossible de charger ou créer un réseau")
+        return
+    
+    # Créer le simulateur seulement si le réseau est disponible
+    simulator = BargeSimulator(network)
+    # ...

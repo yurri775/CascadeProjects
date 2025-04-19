@@ -1,0 +1,13 @@
+=== Erreur du scénario simulation_simple ===
+Code de sortie: 1
+
+=== STDOUT ===
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 185, in <module>
+    main()
+  File "C:\Users\marwa\OneDrive\Desktop\CascadeProjects\barge_simulation\src\main.py", line 116, in main
+    simulator = BargeSimulator(network, routing_manager)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BargeSimulator.__init__() takes 1 positional argument but 3 were given

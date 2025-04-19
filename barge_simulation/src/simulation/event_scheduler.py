@@ -145,3 +145,23 @@ class EventScheduler:
         if not self.events:
             return None
         return heapq.heappop(self.events)
+    
+    def pop_next_event_bag(self):
+        """Récupère et supprime le prochain groupe d'événements simultanés."""
+        if not self.events:
+            return []
+            
+        next_time = self.events[0].time
+        event_bag = []
+        
+        # Collecter tous les événements au même temps
+        for i in range(len(self.events)):
+            if i >= len(self.events):
+                break
+                
+            if self.events[i].time == next_time:
+                event_bag.append(self.events.pop(0))
+            else:
+                break
+                
+        return event_bag
